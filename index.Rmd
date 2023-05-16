@@ -1,94 +1,52 @@
 ---
 title: "A3: SPL Library Checkouts"
+Author: Rhea Parida
 output: html_document
 ---
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+With the advancement of technology, it is said that print is "dying". More people are opting for audio books and ebooks instead of paperbacks and hardcovers. Not only is it the fault of technology, but Ebooks allow people to multitask. They can be listened to in the car, on a walk, or while running errands. One of my main question to answer is if this is true, are people checking out more ebooks and audiobooks than physical books, and to look at this trend over time.   
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R
-script
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
+The year when the most books were checked out was `r most_books_year` when 1527112 books were checked out. This makes sense because after 2020 there was a large drop in the number of books checked out due to the COVID-19 pandemic. In addition, most people checked out digital material in `r `most_digital_year`, during the pandemic people were hesitant on checking out physical things, let alone go to a public place like the library. Most people checked out `r physica_vs_digital` material between 2017-2023 with 10166737 checkouts. This coincides with the fact that the most popular material type checked out is still `r Most_checkedout_material`, which were checked out 6397967 times. Despite the pandemic causing a drop in physical and book checkouts, these material types and usage class are still very popular among the public. The least popular material type was  `r least_checkedout` with only 10 checkouts. Despite the pandemic making going to the library and checking out physical material hard, it is still amongst the most popular to checkout, which tells us that maybe print is not "dead".   
+  
 
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
 
-Feel free to calculate and report values that you find relevant.
 
 ### The Dataset
-
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+This data set was collected by the Seattle Public Library. This data set in particular focuses on checkouts from 2017-2023. It lists the checkout type, the material type, the checkout year and month, the number of checkouts, the title of the book, the author, the subject, the publisher, and year of publication. Seattle wants to ensure that that public has access to transparent data, help provide accurate data for future research of economic development, and provide the city with accurate information to help them serve the public more efficiently. Seattle IT collect only the data they need to accomplish their goals, ensure that the public knows that data is being collected, make sure that they follow regulations when collecting sensitive data, and follow a retention plan. The data was collected by the way the books were checked out. We need to make sure that this data cannot be traced back to specific people, and that it is secure. Some possible limitations can include missing information from the data set and there may be inconsistencies in the data.  
 
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest.
-Think carefully about what you want to communicate to your user (you may have to find relevant trends in the 
-dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the 
-variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("Graph_1.R")}
 ```
+
+In graph 1 I looked at audiobook, book, and ebook checkouts from 2017 to 2023. Since these are the three ways to get books through the library I wanted to see how popular each material type was throughout the years. From the graph, audiobooks and ebooks have been on a steady rise since 2017. Books on the other hand were checked out more than the other two before 2020, but then dropped after 2020. Books since 2021 however are on the rise, and it looks like they may surpass audiobook and ebook checkouts in the near future. 
+
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The second chart that you will create and include will show another trend over time of your 
-variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find 
-relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the 
-variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{{r, echo = FALSE, code = readLines("graph_2.R")}
 ```
+
+
+In my second graph I looked at physical vs. digital checkouts from 2017 to 2023. Physical material includes things like magazines, books, and video disks while digital material includes checkouts of audiobooks, movies, and Ebooks. From this graph up until 2020 people were checking out more physical material than digital material. However, there is a large drop in 2020, likely due to the pandemic, in physical checkouts. Digital material since 2020 has been checked out more than physical material since 2020, but physical material is on a steady rise. 
 
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and 
-more. Here are some requirements to help guide your design:
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
 
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, code = readLines("Graph_3.R")}
 ```
+
+
+For my third graph I pulled all the books by the author Veronica Roth that were checked out over the years and in what format they were checked out in. Out of the 408 observations, none of the books checked out were physical. All of the formats were digital, either through Audiobook or Ebook. Of the two material types, more audiobooks were checked out than ebooks, however there seems to be a spike in Ebook checkouts between 2020 and 2021. This could be because of the Covid-19 pandemic, as people had more time on their hands and were willing to read a book but could not go in person to get a physical copy.  
 
 
